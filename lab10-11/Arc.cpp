@@ -37,5 +37,7 @@ Arc Arc::operator=(const Arc rhs){
 }
 
 ostream& operator<<(ostream& outStream, const Arc rhs){
+	
+	
 	return outStream;
 }
