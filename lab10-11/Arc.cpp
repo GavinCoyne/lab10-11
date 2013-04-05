@@ -31,13 +31,12 @@ Arc::~Arc(){}
 Arc Arc::operator=(const Arc rhs){
 	_startAngle = rhs._startAngle;
 	_endAngle = rhs._endAngle;
-	//(*this).CCircle::operator=(rhs);
+	(*this).CCircle::operator=(rhs);
 
 	return *this;
 }
 
-ostream& operator<<(ostream& outStream, const Arc rhs){
-	
-	
+ostream& operator<<(ostream& outStream, const Arc& rhs){
+	cout << rhs._startAngle << " " << rhs._endAngle << " ";	
 	return outStream;
 }

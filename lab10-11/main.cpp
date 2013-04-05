@@ -6,10 +6,10 @@ using namespace std;
 
 void main(){
 	CCircle test(1,1,1);
-	Arc test1(1,1,1,1,1);
-	//Arc testArc2();
-	//testArc2 = testArc1;
-	cout << test;
+	Arc test1(1.0,1.0,1.0,1,1);
+	Arc testArc2;
+	testArc2 = test1;
+	cout << testArc2;
 
 	system("pause");
 }

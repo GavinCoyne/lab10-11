@@ -23,7 +23,7 @@ public:
 	void setStartAngle();
 	void setEndAngle();
 
-	friend ostream& operator<<(ostream& outStream, const Arc rhs);
+	friend ostream& operator<<(ostream& outStream, const Arc& rhs);
 private:
 	float _startAngle, _endAngle;
 };
