@@ -3,8 +3,7 @@
 #include <math.h>
 #include "MyString.h"
 
-CCircle::CCircle() : CPoint() 
-{
+CCircle::CCircle() : CPoint(){
 	_radius = 0.0;
 }
 

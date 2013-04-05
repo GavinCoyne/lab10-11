@@ -8,8 +8,7 @@
 
 using namespace std;
 
-class CCircle : public CPoint
-{
+class CCircle : public CPoint{
 	public:
 		CCircle();
 		CCircle(const float radius)
@@ -30,5 +29,4 @@ class CCircle : public CPoint
 	private:
 		float _radius;
 };
-
 #endif
