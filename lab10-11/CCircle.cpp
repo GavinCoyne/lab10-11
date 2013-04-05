@@ -44,7 +44,7 @@ CCircle& CCircle::operator=(const CCircle rhs){
 
 ostream& operator<<(ostream& outStream, const CCircle& rhs){
 	outStream << "r = " << rhs._radius;
-	outStream << " " << CPoint(rhs);
+	outStream << " (" <<rhs.getX() << ", " << rhs.getY() << ")";
 	return outStream;
 }
 
