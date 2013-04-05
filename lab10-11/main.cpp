@@ -20,11 +20,11 @@ void main(){
 			cout << err << endl;
 		}
 
-		try{
-			Arc newArc(-50, 50);
-		}catch (MyString err){
-			cout << err << endl;
-		}
+		
+		Arc newArc(50, 50);
+		
+
+		cout << newArc.getCount() << endl;
 	}catch(MyString err){
 		cout << err <<endl;
 	}
