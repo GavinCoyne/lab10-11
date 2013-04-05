@@ -21,7 +21,9 @@ CCircle::CCircle(const CCircle& cpyObj) : CPoint(cpyObj){
 	_radius = cpyObj._radius;
 }
 
-CCircle::~CCircle(){}
+CCircle::~CCircle(){
+	
+}
 
 float CCircle::getRadius(){
 	return _radius;

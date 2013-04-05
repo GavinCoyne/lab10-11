@@ -10,7 +10,7 @@ public:
 CPoint();
 CPoint(const CPoint& objIn);
 CPoint(int x, int y);
-~CPoint();
+virtual ~CPoint();
 
 int getX()const;
 int getY()const;

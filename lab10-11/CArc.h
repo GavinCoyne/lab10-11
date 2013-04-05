@@ -19,7 +19,7 @@ public:
 		throw(MyString);
 	Arc(const Arc& objIn)
 		throw(MyString);
-	~Arc();
+	 ~Arc();
 
 	Arc operator=(const Arc rhs);
 

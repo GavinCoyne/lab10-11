@@ -14,20 +14,24 @@ void main(){
 		cout << testArc2 << endl;
 		cout << "Arc area = " << testArc2.getArea() << endl;
 
-		try{
-			testArc2.setRadius(-3);
-		}catch(MyString err){
-			cout << err << endl;
-		}
-
+		
+		CPoint* pointPointer;
 		
 
 		Arc newArc(50, 50);
-		
-
+		Arc thirdard(1,2);
+		try{
+			if(true){
+				CCircle testArcthing = CCircle();
+				cout << newArc.getCount() << endl;
+			}
+		}catch(MyString err){
+			cout << err << endl;
+		}
 		cout << newArc.getCount() << endl;
 	}catch(MyString err){
 		cout << err <<endl;
 	}
 	system("pause");
+	system("http://google.com");
 }

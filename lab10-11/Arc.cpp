@@ -49,7 +49,9 @@ Arc::Arc(const Arc& ArcIn) : CCircle(ArcIn) {
 	_endAngle = ArcIn._endAngle;
 }
 
-Arc::~Arc(){}  
+Arc::~Arc(){
+	
+}  
 #pragma endregion
 
 #pragma region Operators
