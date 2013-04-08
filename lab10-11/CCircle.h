@@ -11,10 +11,10 @@ using namespace std;
 class CCircle : public CPoint{
 	public:
 		CCircle();
-		CCircle(const float radius)
-			throw(MyString);
-		CCircle(const float radius, const int x, const int y)
-			throw(MyString);
+		CCircle(const float radius);
+			
+		CCircle(const float radius, const int x, const int y);
+			
 		CCircle(const CCircle& cpyObj);
 		~CCircle();
 		float getRadius();

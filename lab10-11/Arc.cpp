@@ -12,41 +12,23 @@ Arc::Arc() : CCircle()
 }
 
 Arc::Arc(float startAngle, float endAngle) : CCircle() {
-	if(startAngle >= 0 && endAngle >= 0)
-	{
-		_startAngle = startAngle;
-		_endAngle = endAngle;
-	
-	}else{
-		throw(MyString("Negative angle has been entered."));
-	}
+	setStartAngle(startAngle);
+	setEndAngle(endAngle);
 }
 
 Arc::Arc(float startAngle, float endAngle, float radius) : CCircle(radius) {
-	if(startAngle >= 0 && endAngle >= 0)
-	{
-		_startAngle = startAngle;
-		_endAngle = endAngle;
-	
-	}else{
-		throw(MyString("Negative angle has been entered."));
-	}
+	setStartAngle(startAngle);
+	setEndAngle(endAngle);
 }
 
 Arc::Arc(float startAngle, float endAngle, float radius, int x, int y) : CCircle(radius, x, y) {
-	if(startAngle >= 0 && endAngle >= 0)
-	{
-		_startAngle = startAngle;
-		_endAngle = endAngle;
-	
-	}else{
-		throw(MyString("Negative angle has been entered."));
-	}
+	setStartAngle(startAngle);
+	setEndAngle(endAngle);
 }
 
 Arc::Arc(const Arc& ArcIn) : CCircle(ArcIn) {
-	_startAngle = ArcIn._startAngle;
-	_endAngle = ArcIn._endAngle;
+	setStartAngle(ArcIn._startAngle);
+	setEndAngle(ArcIn._endAngle);
 }
 
 Arc::~Arc(){
@@ -85,11 +67,25 @@ istream& operator>>(istream& inStream, Arc& rhs){
 
 #pragma region Mutators
 	void Arc::setStartAngle(const float angle){
-		_startAngle = angle;
+		if(angle >= 360){
+			_startAngle = angle - 360;
+			Arc::setStartAngle(_startAngle);
+		}else if(angle < 0){
+			throw(MyString("Arc Error start angle can't be a negative value."));
+		}else{
+			_startAngle = angle;
+		}
 	}
 
 	void Arc::setEndAngle(const float angle){
-		_endAngle = angle;
+		if(angle >= 360){
+			_endAngle = angle -360;
+			Arc::setEndAngle(_endAngle);
+		}else if(angle < 0){
+			throw(MyString("Arc Error End angle must be positive."));
+		}else{
+			_endAngle = angle;
+		}
 	}
 #pragma endregion
 
@@ -102,9 +98,12 @@ istream& operator>>(istream& inStream, Arc& rhs){
 		return _endAngle;
 	}
 
-	float Arc::getArea(){
+	float Arc::getArea(){	
+		//Make all areas positive with abs(theta)
+		float theta = (abs(_endAngle-_startAngle));
+		if(theta == 0)theta = 1*360;
 		//Area of Sector = ½ × (θ × π/180) × r2   (when θ is in degrees)
-		return ((getRadius() * getRadius() * (((_endAngle - _startAngle)* M_PI )/180))/2);
+		return (((theta)/360)*CCircle::getArea());
 	}
 
 #pragma endregion

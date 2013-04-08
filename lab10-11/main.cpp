@@ -6,32 +6,61 @@ using namespace std;
 
 void main(){
 	try{
-		CCircle test(1,1,1);
-		Arc test1(1.0,1.0,1.0,1,1);
-		Arc testArc2;
-		testArc2 = test1;
-		testArc2 = Arc(0,360, 2.0, 52, 6);
-		cout << testArc2 << endl;
-		cout << "Arc area = " << testArc2.getArea() << endl;
-
-		
 		CPoint* pointPointer;
-		
+		CCircle firstCircle = CCircle(5.5, 5, 5);
+		Arc firstArc = Arc(0, 180, 5.5, 0, 0);
+		Arc firstArc2 = Arc(180, 0, 5.5, 0, 0);
 
-		Arc newArc(50, 50);
-		Arc thirdard(1,2);
+
+		pointPointer = &firstCircle;
+		cout << "getArea() pointPointer(~95) = " << (*pointPointer).getArea() << endl;
+
+		pointPointer = &firstArc;
+		cout << "getArea() pointPOinter(~95/2) = " << (*pointPointer).getArea() << endl;
+		cout << "getArea() pointPOinter(~95/2) = " << firstArc2.getArea() << endl;
+
+
 		try{
-			if(true){
-				CCircle testArcthing = CCircle();
-				cout << newArc.getCount() << endl;
-			}
+			CCircle errorCirc(-15.0);
 		}catch(MyString err){
 			cout << err << endl;
 		}
-		cout << newArc.getCount() << endl;
+		try{
+			Arc badAngles(15, 360, -1, 1, 1);
+		}catch(MyString err){
+			cout << endl << "Throwing CCircle error by setting arc radius negative: ";
+			cout << endl << err << endl << endl;
+		}
+
+		try{
+			Arc badAngles(-15, 360, 1, 1, 1);
+		}catch(MyString err){
+			cout << err << endl;
+		}
+		try{
+			Arc badAngles(15, -360, 1, 1, 1);
+		}catch(MyString err){
+			cout << err << endl;
+		}
+
+		try{
+			Arc badAngles(721, 360, 1, 1, 1);
+			cout << "startAngle = " << badAngles.getStartAngle();
+			cout << " EndAngle = " << badAngles.getEndAngle() << endl;
+		}catch(MyString err){
+			cout << err << endl;
+		}
+		
+		try{
+			Arc badAngles(400, 360, 1, 1, 1);
+			cout << "startAngle = " << badAngles.getStartAngle();
+			cout << " EndAngle = " << badAngles.getEndAngle() << endl;
+		}catch(MyString err){
+			cout << err << endl;
+		}
+
 	}catch(MyString err){
 		cout << err <<endl;
 	}
 	system("pause");
-	system("http://google.com");
 }

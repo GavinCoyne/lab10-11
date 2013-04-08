@@ -8,17 +8,16 @@ CCircle::CCircle() : CPoint(){
 }
 
 CCircle::CCircle(float radius) : CPoint(){
-	if(radius > 0)_radius = radius;
-	else throw(MyString("Error. Negative radius in 1 param constructor."));
+	setRadius(radius);
 }
 
 CCircle::CCircle(float radius, int x, int y) : CPoint(x, y){
-	if(radius > 0)_radius = radius;
-	else throw(MyString("Error. Negative radius in 3 param constructor."));
+	setRadius(radius);
+	
 }
 
 CCircle::CCircle(const CCircle& cpyObj) : CPoint(cpyObj){
-	_radius = cpyObj._radius;
+	setRadius(cpyObj._radius);
 }
 
 CCircle::~CCircle(){
@@ -35,7 +34,7 @@ float CCircle::getArea(){
 
 void CCircle::setRadius(float radius){
 	if(radius > 0)_radius = radius;
-	else throw(MyString("Error calling setRadius(float): negative float entered."));
+	else throw(MyString("CCircle Error calling setRadius(float): negative value entered."));
 }
 
 CCircle& CCircle::operator=(const CCircle rhs){
