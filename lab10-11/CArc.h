@@ -15,7 +15,7 @@ public:
 	Arc(float startAngle, float endAngle, float radius);
 	Arc(float startAngle, float endAngle, float radius, int x, int y);
 	Arc(const Arc& objIn);
-	 ~Arc();
+	virtual ~Arc();
 
 	Arc operator=(const Arc rhs);
 

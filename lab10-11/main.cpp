@@ -9,23 +9,105 @@ float arrayAreas(CPoint *arr[], const float size);
 
 void main(){
 	try{
-
+		cout << "***************************************" << endl;
+		cout << "***************************************" << endl;
+		cout << "***************LAB 10-11***************" << endl;
+		cout << "**************GAVIN COYNE**************" << endl;
+		cout << "***************************************" << endl;
+		cout << "***************************************" << endl;
+		cout << "***************************************" << endl;
 		CCircle firstCircle = CCircle(5.5, 5, 5);
 		CCircle secondCircle = CCircle(5.5);
 		CCircle thirdCircle = CCircle();
-
+		CCircle fourthCircle = firstCircle;
+		//CPoint point = CPoint();
 		Arc firstArc = Arc(0, 180, 5.5, 0, 0);
 		Arc secondArc = Arc(180, 0, 5.5);
 		Arc thirdArc =  Arc();
 		Arc fourthArc =  firstArc;
 
-		//CPoint point = CPoint();
-
+		cout << "(expected 8)Count = " << firstCircle.getCount() << endl;
+		
 		try{
-
+			Arc tmpArc =  Arc();
+			cout << "(expected 9)Count = " << firstCircle.getCount() << endl;
 		}catch(MyString err){
-
+			cout << err << endl;
 		}
+
+		cout << "(expected 8)Count = " << firstCircle.getCount() << endl;
+
+		cout << endl << "(expect the same)fourthArc" << fourthArc << endl << " == first arc " << firstArc <<endl;
+		cout << endl << "(expect the same)fourthCircle" << fourthCircle << endl << " == first Circle " << firstCircle <<endl;
+		
+		cout << endl << endl<< "***************************************" << endl;
+		cout << "***************************************" << endl;
+		cout <<"Test negative radius error:" << endl;
+		try{
+			thirdCircle.setRadius(-111);
+		}catch(MyString err){
+			cout << "(Error Caught)"  << err << endl;
+		}
+		cout << "***************************************" << endl;
+		cout << "***************************************" << endl;
+
+		cout << endl<< "***************************************";
+		cout << endl<< "***************************************" << endl;
+		cout <<"Test negative start angle error:" << endl;
+		try{
+			thirdArc.setStartAngle(-111);
+		}catch(MyString err){
+			cout <<"(Error Caught)" << err << endl;
+		}
+		cout << "***************************************" << endl;
+		cout << "***************************************" << endl;
+
+		cout << endl<< "***************************************";
+		cout << endl<< "***************************************" << endl;
+		cout <<"Test negative End angle error:" << endl;
+		
+		try{
+			thirdArc.setEndAngle(-111);
+		}catch(MyString err){
+			cout <<"(Error Caught)" << err << endl;
+		}
+		cout << "***************************************" << endl;
+		cout << "***************************************" << endl << endl;
+		
+		cout << "***************************************" << endl;
+		cout << "***************************************" << endl;
+		cout << "*************TESTING >>************" << endl;
+		cout << "***************************************" << endl;
+
+		cout << "enter values for an arc: ";
+		cin >> thirdArc;
+		cout << thirdArc << endl;
+
+
+		cout <<"enter values for a circle: ";
+		cin >> thirdCircle;
+		cout << thirdCircle << endl;
+
+		cout << endl << "***************************************" << endl;
+		cout << "***************************************" << endl;
+		cout << "*************TESTING MUTATORS and************" << endl;
+		cout << "*************************Accessors**********" << endl;
+
+
+		thirdArc.setStartAngle(199.99);
+		thirdArc.setEndAngle(360);
+		thirdArc.setRadius(25.50);
+		thirdArc.setX(4);
+		thirdArc.setX(6);
+
+		cout << "Expected \"start=199.99, endAngle=0.0, r =25.50 (4, 6)\"" <<endl;
+		cout << thirdArc << endl;
+
+
+
+
+
+
 
 	}catch(MyString err){
 		cout << err << endl;
@@ -110,7 +192,8 @@ void main(){
 
 		float totalArea = 0.0;
 	
-	for(int i = 0; i < size; i++)totalArea += pointArray[i]->getArea();
+	for(int i = 0; i < size; i++)
+		totalArea += pointArray[i]->getArea();
 
 		cout << "TotalArray = " << (*pointArray[0]) << endl;
 		cout << "TotalArray = " << (*pointArray[0]).getArea() << endl;
@@ -120,7 +203,8 @@ void main(){
 		cout << "TotalArray = " << (*pointArray[2]).getArea() << endl;
 		cout << "TotalArray = " << (*pointArray[3]) << endl;
 		cout << "TotalArray = " << (*pointArray[3]).getArea() << endl;
-		//cout << "TotalArray = " << arrayAreas(pointArray, size) << endl;
+		//float testflaot = arrayAreas(pointArray, size);
+		//cout << "TotalArray = " << testflaot << endl;
 		
 	}catch(MyString err){
 		cout << err << endl;
@@ -133,9 +217,9 @@ void main(){
 
 
 float arrayAreas(CPoint *arr[], const int size){
-	float area = 0.0;
+	//float area = 0.0;
 	
 	//for(int i = 0; i < size; i++)area += arr[i]->getArea();
 
-	return area;
+	return 0.0;
 }

@@ -16,7 +16,7 @@ class CCircle : public CPoint{
 		CCircle(const float radius, const int x, const int y);
 			
 		CCircle(const CCircle& cpyObj);
-		~CCircle();
+		virtual ~CCircle();
 		float getRadius()const;
 		float getArea();
 		void setRadius(float radius)
