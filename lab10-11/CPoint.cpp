@@ -47,7 +47,7 @@ int CPoint::getCount()const{
 	return CPoint::counter;
 }
 
-float CPoint::getArea(){
+float CPoint::getArea()const{
 	return 0;
 }
 

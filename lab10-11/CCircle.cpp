@@ -24,11 +24,11 @@ CCircle::~CCircle(){
 	
 }
 
-float CCircle::getRadius(){
+float CCircle::getRadius()const{
 	return _radius;
 }
 
-float CCircle::getArea(){
+float CCircle::getArea()const{
 	return (_radius * _radius * M_PI);
 }
 
