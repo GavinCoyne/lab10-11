@@ -8,6 +8,29 @@ using namespace std;
 float arrayAreas(CPoint *arr[], const float size);
 
 void main(){
+	try{
+
+		CCircle firstCircle = CCircle(5.5, 5, 5);
+		CCircle secondCircle = CCircle(5.5);
+		CCircle thirdCircle = CCircle();
+
+		Arc firstArc = Arc(0, 180, 5.5, 0, 0);
+		Arc secondArc = Arc(180, 0, 5.5);
+		Arc thirdArc =  Arc();
+		Arc fourthArc =  firstArc;
+
+		//CPoint point = CPoint();
+
+		try{
+
+		}catch(MyString err){
+
+		}
+
+	}catch(MyString err){
+		cout << err << endl;
+	}
+
 	//Program testing 1
 	//Question 3
 	try{
@@ -75,9 +98,9 @@ void main(){
 		CPoint *pointArray[size];
 
 
-		CCircle* circle1 = new CCircle(1.0, 1, 1);
+		CCircle* circle1 = new CCircle(1.0, 2, 2);
 		CCircle* circle2 = new CCircle(2.0, 2, 2);
-		Arc* arc1 = new Arc(180, 360, 1.0, 1, 1);
+		Arc* arc1 = new Arc(0, 360, 2.0, 2, 2);
 		Arc* arc2 = new Arc(0, 180, 2.0, 2, 2);
 
 		pointArray[0] = circle1;
@@ -87,13 +110,17 @@ void main(){
 
 		float totalArea = 0.0;
 	
-	//for(int i = 0; i < size; i++)totalArea += pointArray[i]->getArea();
+	for(int i = 0; i < size; i++)totalArea += pointArray[i]->getArea();
 
 		cout << "TotalArray = " << (*pointArray[0]) << endl;
+		cout << "TotalArray = " << (*pointArray[0]).getArea() << endl;
 		cout << "TotalArray = " << (*pointArray[1]) << endl;
+		cout << "TotalArray = " << (*pointArray[1]).getArea() << endl;
 		cout << "TotalArray = " << (*pointArray[2]) << endl;
+		cout << "TotalArray = " << (*pointArray[2]).getArea() << endl;
 		cout << "TotalArray = " << (*pointArray[3]) << endl;
-		cout << "TotalArray = " << arrayAreas(pointArray, size) << endl;
+		cout << "TotalArray = " << (*pointArray[3]).getArea() << endl;
+		//cout << "TotalArray = " << arrayAreas(pointArray, size) << endl;
 		
 	}catch(MyString err){
 		cout << err << endl;

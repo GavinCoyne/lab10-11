@@ -14,7 +14,7 @@ virtual ~CPoint();
 
 int getX()const;
 int getY()const;
-virtual float getArea()const = 0;
+virtual float getArea() = 0;
 int getCount()const;
 
 void setX(const int x);
