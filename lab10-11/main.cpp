@@ -17,29 +17,33 @@ void main(){
 		cout << "***************************************" << endl;
 		cout << "***************************************" << endl;
 		CCircle firstCircle = CCircle(5.5, 5, 5);
-		CCircle secondCircle = CCircle(5.5);
+		CCircle secondCircle = CCircle(2.2);
 		CCircle thirdCircle = CCircle();
-		CCircle fourthCircle = firstCircle;
+		CCircle fourthCircle = CCircle(firstCircle);
 		//CPoint point = CPoint();
-		Arc firstArc = Arc(0, 180, 5.5, 0, 0);
-		Arc secondArc = Arc(180, 0, 5.5);
-		Arc thirdArc =  Arc();
-		Arc fourthArc =  firstArc;
+		Arc firstArc = Arc(0, 180, 5.5, 0, 0);//5 parameter
+		Arc secondArc = Arc(75, 0, 18.5);//3
+		Arc thirdArc =  Arc();//no params
+		Arc fourthArc =  Arc(firstArc);//copy constructor
 
 		cout << "(expected 8)Count = " << firstCircle.getCount() << endl;
-		
 		try{
 			Arc tmpArc =  Arc();
 			cout << "(expected 9)Count = " << firstCircle.getCount() << endl;
 		}catch(MyString err){
 			cout << err << endl;
 		}
-
 		cout << "(expected 8)Count = " << firstCircle.getCount() << endl;
 
 		cout << endl << "(expect the same)fourthArc" << fourthArc << endl << " == first arc " << firstArc <<endl;
+		fourthArc = secondArc;
+		cout << endl << "(expect the same)fourthArc" << fourthArc << endl << " == Second arc " << secondArc <<endl;
+
+
 		cout << endl << "(expect the same)fourthCircle" << fourthCircle << endl << " == first Circle " << firstCircle <<endl;
-		
+		fourthCircle = secondCircle;
+		cout << endl << "(expect the same)fourthCircle" << fourthCircle << endl << " == second Circle " << secondCircle <<endl;
+
 		cout << endl << endl<< "***************************************" << endl;
 		cout << "***************************************" << endl;
 		cout <<"Test negative radius error:" << endl;
@@ -100,11 +104,11 @@ void main(){
 		thirdArc.setX(4);
 		thirdArc.setX(6);
 
-		cout << "Expected \"start=199.99, endAngle=0.0, r =25.50 (4, 6)\"" <<endl;
+		cout << "Expected \"199.99 0 r =25.50 (4, 6)\"" <<endl;
 		cout << thirdArc << endl;
 
 
-
+		Arc twoParam = Arc (5.5, 4.5);
 
 
 
@@ -180,10 +184,10 @@ void main(){
 		CPoint *pointArray[size];
 
 
-		CCircle* circle1 = new CCircle(1.0, 2, 2);
-		CCircle* circle2 = new CCircle(2.0, 2, 2);
-		Arc* arc1 = new Arc(0, 360, 2.0, 2, 2);
-		Arc* arc2 = new Arc(0, 180, 2.0, 2, 2);
+		CCircle* circle1 = new CCircle(1.0, 1, 2);
+		CCircle* circle2 = new CCircle(2.0, 3, 4);
+		Arc* arc1 = new Arc(0, 360, 2.0, 5, 6);
+		Arc* arc2 = new Arc(0, 180, 2.0, 7, 8);
 
 		pointArray[0] = circle1;
 		pointArray[1] = circle2;
@@ -194,15 +198,17 @@ void main(){
 	
 	for(int i = 0; i < size; i++)
 		totalArea += pointArray[i]->getArea();
+	cout << "***************************************" << endl;
+	cout << "***************************************" << endl;
+	cout << "**********OUTPUTTING (x, y)************" << endl;
+	cout << "***************************************" << endl;
+	cout << "TotalArray = " << (*pointArray[0]) << endl;
+	cout << "TotalArray = " << (*pointArray[1]) << endl;
+	cout << "TotalArray = " << (*pointArray[2]) << endl;
+	cout << "TotalArray = " << (*pointArray[3]) << endl;
 
-		cout << "TotalArray = " << (*pointArray[0]) << endl;
-		cout << "TotalArray = " << (*pointArray[0]).getArea() << endl;
-		cout << "TotalArray = " << (*pointArray[1]) << endl;
-		cout << "TotalArray = " << (*pointArray[1]).getArea() << endl;
-		cout << "TotalArray = " << (*pointArray[2]) << endl;
-		cout << "TotalArray = " << (*pointArray[2]).getArea() << endl;
-		cout << "TotalArray = " << (*pointArray[3]) << endl;
-		cout << "TotalArray = " << (*pointArray[3]).getArea() << endl;
+	cout << "(Expect around:34.55)Total area = " << totalArea << endl;
+	
 		//float testflaot = arrayAreas(pointArray, size);
 		//cout << "TotalArray = " << testflaot << endl;
 		
