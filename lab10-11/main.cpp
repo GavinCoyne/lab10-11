@@ -211,21 +211,19 @@ void main(){
 	
 		//float testflaot = arrayAreas(pointArray, size);
 		//cout << "TotalArray = " << testflaot << endl;
+		//Gives me a LNK2019: unresolved externals when I try to call arraAreas();
 		
 	}catch(MyString err){
 		cout << err << endl;
 	}
 
-	//Commented out Cpoint (can't instantiate becuase of pure virtual class)
-	//CPoint ERROR_POINT();
 	system("pause");
 }
-
 
 float arrayAreas(CPoint *arr[], const int size){
 	//float area = 0.0;
 	
 	//for(int i = 0; i < size; i++)area += arr[i]->getArea();
 
-	return 0.0;
+	return 0.0f;
 }
